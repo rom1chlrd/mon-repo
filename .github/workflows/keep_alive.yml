@@ -2,7 +2,6 @@ name: Keep Streamlit App Alive
 
 on:
   schedule:
-    # Runs at 08:00 UTC and 20:00 UTC every day (toutes les 12h)
     - cron: '0 8 * * *'
     - cron: '0 20 * * *'
   workflow_dispatch: 
@@ -12,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
